@@ -10,6 +10,7 @@
 <body>
     <!-- O formulário usa o método POST para enviar dados de forma segura -->
     <!-- Os dados serão enviados para 'index.php' com a ação 'login' -->
+     <main>
     <form method="post" action="index.php?action=login">
         <input type="email" name="email" placeholder="Email" required><br>
         <input type="password" name="senha" placeholder="Senha" required><br>
@@ -17,7 +18,7 @@
     </form>
     <!-- Define o destino do link e leva à opção de cadastro -->
     <a href="index.php?action=resgister">Cadastrar-se</a>
- 
+    </main>
 </body>
  
 </html>
