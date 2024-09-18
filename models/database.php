@@ -15,12 +15,12 @@ class Database{
 
     
      // A conexâo usa o driver Mysql (mysql:) e as infotmaçôes de host e DB
-     self::$instance = new PDO("mysql:host=$host;dbname=$db", $user, $password)
+     self::$instance = new PDO("mysql:host=$host;dbname=$db", $user, $password);
         //define o modo de erro para exceçôes, facilitando a depuração e tratamento do erro
        self::$instance-->setAttribute(PDO::ATTR_AUTOCOMMIT, PDO::ERRMODE_EXCEPTION);
          
     }
-      retuan self::$instance;
+      return self::$instance;
    }
 }
 ?>
