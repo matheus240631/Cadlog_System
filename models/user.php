@@ -1,7 +1,7 @@
 <?php
  require_once 'models/database.php';
 
- class Use
+ class User
 {
  public static function findByEmail($email){
     
