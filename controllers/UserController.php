@@ -12,6 +12,7 @@ class Usercontroller
            ];
 
            User::create($data);
+           Header('Location: index.php');
         }else{
             // Se a requisição não for POST (por exemplp,GET), carrega a página de registro
             include 'views/register.php';
