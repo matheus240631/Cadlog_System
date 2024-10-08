@@ -3,7 +3,7 @@
 class Usercontroller
 {
     public function register(){
-        if($_SERVER['REQUEST_METHOF'] == 'POST'){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
            $data = [
             'nome' => $_POST['nome'], 
             'email' => $_POST['email'],
