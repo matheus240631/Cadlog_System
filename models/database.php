@@ -10,7 +10,7 @@ class Database{
     if(!self::$instance){
      $host   = 'localhost';
      $db     = 'sistema_usuarios';
-     $user   = 'rot';
+     $user   = 'root';
      $password = '';
 
     
