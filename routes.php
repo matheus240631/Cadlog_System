@@ -1,20 +1,31 @@
 <?php
+// Inclui arquivos de controlador para lidar com diferentes ações
+require 'controllers/AuthController.php'; // inclui o controlador de autenticação
+require 'controllers/UserController.php'; // inclui o controlador de usuário
+require 'controllers/DashboardController.php'; // inclui o controlador de dashboard
+ 
+// Cria instâncias dos controladores para utilizar seus métodos
+$authController       = new AuthController(); // Instancia o controlador de autenticação
+$userController       = new UserController();
+$dashbpardController  =new DashboardController();
 
-// inclui arquivos de controlador para lidar com diferente ações
-require 'controllers/AuthController.php';// inclui o controlador de autenticação 
-require 'controllers/UserController.php';// inclui o controlador de usuário
-require 'controllers/DashboardController.php';// inclui o controlador de dashboard
-
-// cria instâncias dos controladores para utilizar seus métodos
-$autoController = new AuthController();
-$userController = new UserController();
-
-//coleta a ação da URL, se não houver definida, usa 'login' por padrão 
-$actin = $_GET['action'] ?? 'login'; // usa operador de coalescência nula (??) para definir 'login' se 'action' não estiver presente
-
-
-switch($actin){
+// Coleta a ação da URL, se não houver definida, usa 'login' por padrão
+$action = $_GET['action'] ?? 'login'; // Usa operador de coalescência nula (??) para definir 'login' se 'action' não estiver presente
+ 
+// Verifica a ação solicitada e chama o método apropriado do controlador
+switch($action){
     case 'login':
-         $autoControler->login(); //chama o método login do controlador de autenticação
+        $authController->login(); // chama o método login do controlador de autenticação
+        break;
+    case 'register':
+        $userController->register();
+        break;
+        case 'dashboard':
+        $dashboardController->index();
+        break;
+    default:
+        $authController->login();
+        break;
+
 }
 ?>
