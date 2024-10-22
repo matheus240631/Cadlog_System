@@ -1,3 +1,10 @@
+<?php
+  session_start();
+
+  if(isset($_SESSION['perfil'])):
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
  
@@ -22,20 +29,35 @@
                 </tr>
             </thead>
             <tbody>
- 
+                  
+            <?php foreach($users as $user): ?>        
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?= $user['id'] ?></td>
+                    <td><?= $user['nome'] ?></td>
+                    <td><?= $user['email'] ?></td>
+                    <td><?= $user['perfil'] ?></td>
+                    <td>
+                        <?php if($_SESSION ['perfil'] == 'admin' || $_SESSION ['perfil'] == 'gastor' ): ?>
+                         <a horef=''>Editar</a>
+                         <?php endif; ?>
+
+                         <!-- insere botão deexclusão apenas para perfil admin -->
+                         <?php if($_SESSION['perfil'] == 'admin'): ?>
+                            <a horef=''>Excluir</a>
+                            <?php endif; ?> 
+                    </td>
                 </tr>
- 
+              <?php endforeach; ?>
             </tbody>
         </table>
  
-        <a href="" class="btn">Voltar ao Dashboard</a>
+             <a href="idex.php?action-dashboard" class='btn'>voltar ao Dashboard</a>
+       
     </div>
 </body>
  
 </html>
+
+<?php else: ?>
+     <p>Erro você tem permissão para visualizar esta página</p>
+<?php  endif; ?>

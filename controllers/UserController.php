@@ -17,7 +17,14 @@ class Usercontroller
             // Se a requisição não for POST (por exemplp,GET), carrega a página de registro
             include 'views/register.php';
         }
-    }  
+    }
+    
+     public function list(){
+        $users = User::all();
+        include 'views/list_users.php';
+     }
+
+
 }
 
 ?>
