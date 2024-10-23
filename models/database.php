@@ -9,7 +9,7 @@ class Database{
      //verifica se a instância de conxão ainda 
     if(!self::$instance){
      $host   = 'localhost';
-     $db     = 'sistema_usuarios';
+     $db     = 'sistema_usuario';
      $user   = 'root';
      $password = '';
 
