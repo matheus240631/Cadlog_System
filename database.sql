@@ -1,6 +1,6 @@
 CREATE DATABASE sistema_usuarios;
  
-USE sistema_usuarios;
+USE sistema_usuario;
  
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
