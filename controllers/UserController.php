@@ -24,7 +24,29 @@ class Usercontroller
         include 'views/list_users.php';
      }
 
+    public function edit($id){
+       session_start();
+       
+       // Permitir que admin e gestor editem
+       if($_SESSION['perfil'] == 'adin' || $_SESSION['perfil'] == 'gestor'){
+         $user = User::find($id);
 
+
+         if($_SESSION['REQUEST_METHOD'] == 'POST'){
+
+            $data = [
+                'nome' => $_POST['nome'], 
+                'email' => $_POST['email'],
+                 'perfil'=> $_POST['perfil']
+               ];
+
+               User::update($id, $data);
+               header('Location: index.php?action=list');
+
+         }
+       }
+
+    }
 }
 
 ?>
