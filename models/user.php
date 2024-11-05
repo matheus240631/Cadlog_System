@@ -1,6 +1,6 @@
 <?php
 require_once 'models/database.php';
-
+ 
 class User
 {
     // Função para localizar usuário pelo email
@@ -29,15 +29,15 @@ class User
         $stmt = $conn->query('SELECT * FROM usuarios');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
+ 
     public static function update($id, $data){
         $conn = Database::getConnection();
-     
-         // Prepara a consulta SQL para atualizar os dados do usuário
-         $stmt=$conn->prepare('UPDATE usuarios SET nome = :nome, email = :email, perfil = :perfil WHERE id = :id');
-
-         $data['id'] = $id;
-         $stmt->execute($data);
+ 
+        // Prepara a consulta SQL para atualizar os dados do usuário
+        $stmt=$conn->prepare('UPDATE usuarios SET nome = :nome, email = :email, perfil = :perfil WHERE id = :id');
+ 
+        $data['id'] = $id;
+        $stmt->execute($data);
     }
 }
 ?>
