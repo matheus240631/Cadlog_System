@@ -38,7 +38,7 @@
                     <td><?= $user['perfil'] ?></td>
                     <td>
                         <?php if($_SESSION ['perfil'] == 'admin' || $_SESSION ['perfil'] == 'gastor' ): ?>
-                         <a horef='index.php?edit&id=<?= $user['id'] ?>'>Editar</a>
+                         <a horef='index.php?action=edit&id=<?= $user['id'] ?>'>Editar</a>
                          <?php endif; ?>
 
                          <!-- insere botão deexclusão apenas para perfil admin -->
