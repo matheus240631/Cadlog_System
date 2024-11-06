@@ -13,8 +13,10 @@
         <h1>Bem-vindo, Usuario!</h1>
         <p>Esta é a visão do perfil PERFIL.</p>
             <!-- Admin pode gerenciar usuários (editar e excluir) -->
+             <? if($_SESSION['perfil'] == 'admin'): ?>
             <a href="index.php?action=list" class="btn">Gerenciar Usuários (Admin)</a>
  
+            <?php elseif($_SESSION['perfil'] == 'gester'): ?>
             <!-- Gestor pode gerenciar usuários (apenas editar) -->
             <a href="index.php?action=list" class="btn">Gerenciar Usuários (Gestor)</a>
             <p>Área exclusiva do Gestor.</p>
