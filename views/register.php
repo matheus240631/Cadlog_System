@@ -27,7 +27,7 @@
 
            <button type="submit">Cadastrar</button>
        </form>
-       <a href="index.php?ation=login"> Voltsr ao Login</a>  
+       <a href="index.php?ation=login"> Voltar ao Login</a>  
    </div> 
 </body>
 </html>
