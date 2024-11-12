@@ -51,6 +51,12 @@ class Usercontroller
 
     }
 
+    public function delete($id){
+      User::delete($id);
+      header('Lovstion: index.php?action=list');
+    }
+
+
 }
 
 ?>
