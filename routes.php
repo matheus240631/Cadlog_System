@@ -34,7 +34,10 @@ switch($action){
         $id = $_GET['id'];
         $userController->edit($id);
         break;
-
+        case 'delete':
+            $id = $_GET['id'];
+            $userController->delete($id);
+            break;
      default:
         $authController->login();
       break;
