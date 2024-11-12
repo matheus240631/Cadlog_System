@@ -43,7 +43,7 @@
 
                          <!-- insere botão deexclusão apenas para perfil admin -->
                          <?php if($_SESSION['perfil'] == 'admin'): ?>
-                            <a horef=''>Excluir</a>
+                            <a horef="index.php?action=delete&id=<?= $user['id']  ?>">Excluir</a>
                             <?php endif; ?> 
                     </td>
                 </tr>
